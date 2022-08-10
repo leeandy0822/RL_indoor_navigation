@@ -1,0 +1,8 @@
+prefix=/home/ncrl/PX4_RL_WS/catkin_ws/devel
+
+Name: indoor_navigation
+Description: Description of indoor_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

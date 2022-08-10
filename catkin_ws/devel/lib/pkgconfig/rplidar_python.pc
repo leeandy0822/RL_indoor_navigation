@@ -1,0 +1,8 @@
+prefix=/home/ncrl/PX4_RL_WS/catkin_ws/devel
+
+Name: rplidar_python
+Description: Description of rplidar_python
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lrplidar_python
+Requires: roslaunch rospy message_runtime
