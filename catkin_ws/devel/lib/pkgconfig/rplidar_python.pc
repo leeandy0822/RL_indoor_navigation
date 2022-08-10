@@ -1,4 +1,4 @@
-prefix=/home/ncrl/PX4_RL_WS/catkin_ws/devel
+prefix=/home/leeandy/indoor_navigation/catkin_ws/devel
 
 Name: rplidar_python
 Description: Description of rplidar_python

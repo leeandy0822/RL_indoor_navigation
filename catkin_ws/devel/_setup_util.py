@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/ncrl/PX4_RL_WS/catkin_ws/devel;/opt/ros/melodic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/leeandy/cmake-install15;/home/leeandy/my_ws/devel;/home/leeandy/catkin_ws/devel;/opt/ros/melodic;/home/leeandy/cmake-install15;/home/leeandy/cmake-install10'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []
