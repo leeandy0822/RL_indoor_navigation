@@ -58,7 +58,7 @@ if __name__ == "__main__":
     ###################   Testing Argument   ###################
     parser.add_argument("--name", default="", type=str, help="The name of the simulation")
     parser.add_argument("--seed", type=int, help="Set random seed")
-    parser.add_argument("--load_model", default="", type=str, help="Load a model")
+    parser.add_argument("--load_model", default="pretrained_weights/CBFDRL_empty_room_obstacle_ep_3500.ckpt", type=str, help="Load a model")
     parser.add_argument("--save_buffer", action="store_true", help="Save the replay buffer or not")
     parser.add_argument("--visualize", action="store_true", help="Visualize the comparison between desired action and constrained action")
     parser.add_argument("--cal_violation", action="store_true", help="Calculate the number of constraint violations every time steps")

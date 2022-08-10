@@ -4,34 +4,7 @@
 
 ![](https://user-images.githubusercontent.com/40656204/139214160-2353717e-466e-46fb-a1d6-18caa950e6bd.gif)
 
----
 
-# Table of Contents
-- [Indoor Navigation](#indoor-navigation)
-- [Table of Contents](#table-of-contents)
-  - [Architecture <a name="architecture"></a>](#architecture-)
-  - [Development Platform <a name="platform"></a>](#development-platform-)
-  - [* Python 3.7.0](#-python-370)
-  - [Installation <a name="installation"></a>](#installation-)
-    - [For Simulation <a name="simulationinstall"></a>](#for-simulation-)
-      - [docker <a name="simpx4install"></a>](#docker-)
-      - [PX4 <a name="simpx4install"></a>](#px4-)
-    - [For Experiment <a name="experimentinstall"></a>](#for-experiment-)
-      - [RPLiDAR Driver <a name="exprplidarinstall"></a>](#rplidar-driver-)
-      - [MAVROS <a name="expmavrosinstall"></a>](#mavros-)
-      - [VRPN <a name="expvrpninstall"></a>](#vrpn-)
-      - [OptiTrack <a name="expoptitrackinstall"></a>](#optitrack-)
-      - [Calibration of UAV (QGround) <a name="expcalibrationinstall"></a>](#calibration-of-uav-qground-)
-  - [How to Run ? <a name="howtorun"></a>](#how-to-run--)
-    - [Simulation <a name="runsimulation"></a>](#simulation-)
-    - [Experiment <a name="runexperiment"></a>](#experiment-)
-  - [Unit Test <a name="unittest"></a>](#unit-test-)
-    - [PX4 Gym-Like Environment <a name="px4gym"></a>](#px4-gym-like-environment-)
-    - [Constraint Generator <a name="constraintgenerator"></a>](#constraint-generator-)
-    - [Local Map Generator <a name="localgenerator"></a>](#local-map-generator-)
-    - [Forward Spanning Tree <a name="fst"></a>](#forward-spanning-tree-)
-
----
 
 ## Architecture <a name="architecture"></a>
 ![](https://user-images.githubusercontent.com/40656204/174959017-14469587-adcb-401f-ab1e-76797b25b34e.png)
@@ -45,16 +18,20 @@
 * Python 3.7.0
 ---
 
-## Installation <a name="installation"></a>
-### For Simulation <a name="simulationinstall"></a>
-#### docker <a name="simpx4install"></a>
-1. install docker for ubuntu
-2. git clone repo
+## Simulation Environment Setup<a name="simulationinstall"></a>
+-  [PX4-AUTOPILOT Download](https://drive.google.com/file/d/1UOc7kZXKpTuCZGh5KfG4-G2deOsJlv65/view)
+-  [Model Download](https://drive.google.com/drive/folders/15oR-j1Nj4WMCyUofwuvOF4qQ-nsbXPid?usp=sharing)
+-  [Replay Buffer Download](https://drive.google.com/drive/folders/1weF114nljVHWGdSbjrCx1i-awduWp4zq?usp=sharing)
+---
 
-#### PX4 <a name="simpx4install"></a>
+### Docker Environment<a name="simpx4install"></a>
+1. `install docker for ubuntu`
+2. `git clone repo`
+
+### PX4 Environment <a name="simpx4install"></a>
 1. `$ cd ~/`
 2. `Downlaod PX4-Autopilot from 
-https://drive.google.com/file/d/1UOc7kZXKpTuCZGh5KfG4-G2deOsJlv65/view`
+`
 3. `$ mv PX4_Autopilot ~/indoor_navigation/`
 4. `$ cd indoor_navigation`
 5. `$ source docker_start.sh`
@@ -68,9 +45,8 @@ https://drive.google.com/file/d/1UOc7kZXKpTuCZGh5KfG4-G2deOsJlv65/view`
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
     ```
 
-
-### For Experiment <a name="experimentinstall"></a>
-#### RPLiDAR Driver <a name="exprplidarinstall"></a>
+## Experiment Environment Setup <a name="experimentinstall"></a>
+### RPLiDAR Driver <a name="exprplidarinstall"></a>
 1. `$ cd ~/catkin_ws/src`
 2. `$ git clone https://github.com/zonghan0904/rplidar_python.git`
 3. `$ cd ~/catkin_ws`
@@ -79,7 +55,7 @@ https://drive.google.com/file/d/1UOc7kZXKpTuCZGh5KfG4-G2deOsJlv65/view`
 6. unpack construct-2.5.2.zip and pyserial-3.0.1.tar.gz
 7. go to unpacked folders and run `$ sudo python setup.py install`
 
-#### MAVROS <a name="expmavrosinstall"></a>
+### MAVROS <a name="expmavrosinstall"></a>
 ```
 sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras screen openssh-server git
 
@@ -104,7 +80,7 @@ roslaunch mavros px4.launch
 # 如果沒有回傳就斷開 pixhawk 的 type C 並重新接上 (需在蜂鳴器響之前完成)
 ```
 
-#### VRPN <a name="expvrpninstall"></a>
+### VRPN <a name="expvrpninstall"></a>
 ```
 sudo apt-get install ros-melodic-vrpn-client-ros
 
@@ -117,11 +93,11 @@ roslaunch vrpn_client_ros sample.launch
 # 如果沒有就參考以下的 optitrack setting
 ```
 
-#### OptiTrack <a name="expoptitrackinstall"></a>
+### OptiTrack <a name="expoptitrackinstall"></a>
 1. 框出 rigidbody 並命名為 rigidbody7
 2. 設定 data streaming 的本端 IP 為開啟 motive 本身的電腦 IP
 
-#### Calibration of UAV (QGround) <a name="expcalibrationinstall"></a>
+### Calibration of UAV (QGround) <a name="expcalibrationinstall"></a>
 1. 調整 parameter 把 EKF2_AID_MASK 設成 use GPS 、 EKF2_HGT_MODE 設成 GPS
 2. reboot pixhawk to set parameters
 3. 校正 compass -> gyro -> accelerometer -> level meter
