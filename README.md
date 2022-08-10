@@ -29,16 +29,13 @@
 2. `git clone repo`
 
 ### PX4 Environment <a name="simpx4install"></a>
-1. `$ cd ~/`
-2. `Downlaod PX4-Autopilot from 
-`
-3. `$ mv PX4_Autopilot ~/indoor_navigation/`
-4. `$ cd indoor_navigation`
-5. `$ source docker_start.sh`
-6. `$ cd PX4_RL_WS/PX4-Autopilot`
-
-7.  `$ make px4_sitl gazebo`
-8.  `run these command in terminal before use the px4`
+1. `Download PX4_Autopilot`
+2. `$ mv PX4_Autopilot ~/indoor_navigation/`
+3. `$ cd indoor_navigation`
+4. `$ source docker_start.sh`
+5. `$ cd PX4_RL_WS/PX4-Autopilot`
+6.  `$ make px4_sitl gazebo`
+7.  `Run these commands in terminal before using PX4 function`
     ```shell
     source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot/ ~/PX4-Autopilot/build/px4_sitl_default
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
@@ -47,9 +44,9 @@
 
 ## Experiment Environment Setup <a name="experimentinstall"></a>
 ### RPLiDAR Driver <a name="exprplidarinstall"></a>
-1. `$ cd ~/catkin_ws/src`
+1. `$ cd ~/RL_indoor_navigation/catkin_ws/src`
 2. `$ git clone https://github.com/zonghan0904/rplidar_python.git`
-3. `$ cd ~/catkin_ws`
+3. `$ cd ~/RL_indoor_navigation/catkin_ws`
 4. `$ catkin_make`
 5. `$ roscd rplidar_python/lib_for_install`
 6. unpack construct-2.5.2.zip and pyserial-3.0.1.tar.gz
@@ -111,9 +108,13 @@ roslaunch vrpn_client_ros sample.launch
 在launch gazebo world之前,可以調整indoor_navigation/config裡的yaml檔來調整一些parameter
 
 ### Simulation <a name="runsimulation"></a>
+- Docker
 ```
 source docker_start.sh
 roslaunch indoor_navigation px4_sim.launch world_name:=<name of world in indoor_navigation/worlds>
+```
+- PC
+```
 python train.py --save_buffer --save_model --constraint full
 python test.py --load_model <path_to_weights> --constraint full --visualize
 ```
