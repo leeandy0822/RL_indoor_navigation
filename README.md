@@ -18,13 +18,11 @@
 * Python 3.7.0
 ---
 
-## 2024.8 update
-- Dataset Link: https://scidm.nchc.org.tw/dataset/indoor_navigation_cbf_rl
-
-## Simulation Environment Setup<a name="simulationinstall"></a>
+## Simulation Environment Setup (2024.8 Update)<a name="simulationinstall"></a>
 
 -  [PX4-AUTOPILOT Download](https://drive.google.com/file/d/1UOc7kZXKpTuCZGh5KfG4-G2deOsJlv65/view)
--  [Model Download](https://drive.google.com/drive/folders/15oR-j1Nj4WMCyUofwuvOF4qQ-nsbXPid?usp=sharing)
+-  [2022 Model Download](https://drive.google.com/drive/folders/15oR-j1Nj4WMCyUofwuvOF4qQ-nsbXPid?usp=sharing)
+-  [2024 Model Download](https://scidm.nchc.org.tw/dataset/indoor_navigation_cbf_rl)
 -  [Replay Buffer Download](https://drive.google.com/drive/folders/1weF114nljVHWGdSbjrCx1i-awduWp4zq?usp=sharing)
 
 ### Docker Environment<a name="simpx4install"></a>
