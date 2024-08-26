@@ -24,7 +24,9 @@
 -  [2022 Model Download](https://drive.google.com/drive/folders/15oR-j1Nj4WMCyUofwuvOF4qQ-nsbXPid?usp=sharing)
 -  [2022 Replay Buffer Download](https://scidm.nchc.org.tw/dataset/uav)
 -  [2023 Replay Buffer Download](https://scidm.nchc.org.tw/dataset/drone_navigation_rl_replaybuffer)
+    - Update 3 room environment with NWFPO algorithm
 -  [2024 Model Download](https://scidm.nchc.org.tw/dataset/indoor_navigation_cbf_rl)
+    - NWFPO Model upload
 
 
 ### Docker Environment<a name="simpx4install"></a>
