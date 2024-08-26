@@ -26,7 +26,7 @@
 -  [2023 Replay Buffer Download](https://scidm.nchc.org.tw/dataset/drone_navigation_rl_replaybuffer)
     - Update 3 room environment with NWFPO algorithm
 -  [2024 Model Download](https://scidm.nchc.org.tw/dataset/indoor_navigation_cbf_rl)
-    - NWFPO Model upload
+    - NFWPO Model upload
 
 
 ### Docker Environment<a name="simpx4install"></a>
